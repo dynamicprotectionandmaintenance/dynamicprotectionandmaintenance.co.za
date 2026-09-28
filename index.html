@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dynamic Protection & Maintenance (Pty) Ltd - professional property protection, maintenance and project management services in Durban, KwaZulu-Natal.">
+<title>Dynamic Protection & Maintenance (Pty) Ltd</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:#17202a;background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);border-bottom:1px solid #e9ecef}
+.navbar{max-width:1180px;margin:auto;min-height:78px;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.logo a{font-weight:800;letter-spacing:.4px;font-size:1.05rem;display:flex;align-items:center;gap:8px}
+.logo-mark{width:38px;height:38px;border-radius:8px;background:#17202a;color:#fff;display:grid;place-items:center;font-weight:900}
+.nav-links{display:flex;gap:28px;align-items:center;list-style:none}
+.nav-links a{font-weight:600;font-size:.92rem}
+.nav-links a:hover{color:#b07b2c}
+.menu-toggle{display:none;border:0;background:none;font-size:1.7rem;cursor:pointer}
+.hero{min-height:78vh;display:flex;align-items:center;background:linear-gradient(90deg,rgba(10,18,25,.88),rgba(10,18,25,.45)),url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero-inner{max-width:1180px;width:100%;margin:auto;padding:90px 24px;color:#fff}
+.hero h1{font-size:clamp(2.3rem,5vw,4.5rem);line-height:1.05;max-width:800px;margin-bottom:22px}
+.hero p{font-size:1.12rem;max-width:680px;color:#edf1f3;margin-bottom:32px}
+.buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;border-radius:5px;font-weight:700;transition:.2s}
+.btn-primary{background:#b07b2c;color:#fff}
+.btn-primary:hover{background:#98671f}
+.btn-outline{border:1px solid #fff;color:#fff}
+.btn-outline:hover{background:#fff;color:#17202a}
+section{padding:90px 24px}
+.container{max-width:1180px;margin:auto}
+.section-label{text-transform:uppercase;letter-spacing:2px;font-size:.78rem;font-weight:800;color:#b07b2c;margin-bottom:10px}
+.section-title{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin-bottom:18px}
+.section-intro{max-width:760px;color:#66717a}
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center}
+.about-copy p{margin-bottom:18px;color:#59636b}
+.about-points{display:grid;gap:14px}
+.point{padding:22px;border:1px solid #e8eaec;border-radius:8px;background:#fafafa}
+.point strong{display:block;font-size:1rem;margin-bottom:5px}
+.point span{font-size:.86rem;color:#737b82}
+.services{background:#f6f7f8}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+.card{background:#fff;border:1px solid #e5e7e9;border-radius:10px;padding:32px;box-shadow:0 8px 25px rgba(0,0,0,.04)}
+.icon{font-size:1.8rem;margin-bottom:18px}
+.card h3{margin-bottom:10px}
+.card p{color:#68727a;font-size:.95rem}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}
+.why{padding:24px;border-top:3px solid #b07b2c;background:#fafafa}
+.why h3{font-size:1rem;margin-bottom:8px}
+.why p{font-size:.88rem;color:#69727a}
+.cta{padding:70px 24px;background:#17202a;color:#fff}
+.cta-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.cta h2{font-size:clamp(1.8rem,4vw,2.8rem)}
+.contact{background:#f6f7f8}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;margin-top:40px}
+.contact-info{display:grid;gap:18px}
+.contact-item{padding:18px 0;border-bottom:1px solid #ddd}
+.contact-item strong{display:block;margin-bottom:4px}
+.contact-item a{color:#8b5d20;font-weight:600}
+form{background:#fff;padding:30px;border:1px solid #e4e6e8;border-radius:10px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:16px}
+.field.full{grid-column:1/-1}
+label{display:block;font-size:.86rem;font-weight:700;margin-bottom:7px}
+input,select,textarea{width:100%;padding:12px 13px;border:1px solid #ccd1d5;border-radius:5px;font:inherit;background:#fff}
+textarea{min-height:145px;resize:vertical}
+footer{background:#0f151a;color:#cfd5d9;padding:55px 24px 25px}
+.footer-grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.3fr .7fr .9fr;gap:40px}
+footer h3,footer h4{color:#fff;margin-bottom:13px}
+footer p,footer li{font-size:.9rem;color:#aeb7bd}
+footer ul{list-style:none;display:grid;gap:8px}
+footer a:hover{color:#fff}
+.copyright{max-width:1180px;margin:35px auto 0;padding-top:20px;border-top:1px solid #293038;font-size:.8rem;color:#89939a}
+@media(max-width:850px){
+.nav-links{display:none;position:absolute;top:78px;left:0;right:0;background:#fff;padding:20px 24px;flex-direction:column;align-items:flex-start;border-bottom:1px solid #ddd}
+.nav-links.open{display:flex}
+.menu-toggle{display:block}
+.about-grid,.contact-grid{grid-template-columns:1fr}
+.cards{grid-template-columns:1fr}
+.why-grid{grid-template-columns:1fr 1fr}
+.cta-inner{flex-direction:column;align-items:flex-start}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:550px){
+section{padding:70px 18px}
+.hero-inner{padding:75px 18px}
+.navbar{padding:0 18px}
+.form-grid{grid-template-columns:1fr}
+.field.full{grid-column:auto}
+.why-grid,.footer-grid{grid-template-columns:1fr}
+.logo a{font-size:.9rem}
+}
+</style>
+</head>
+<body>
+<header>
+<nav class="navbar">
+<div class="logo"><a href="#home" aria-label="Dynamic Protection & Maintenance"><span class="logo-mark">D</span> Dynamic Protection & Maintenance</a></div>
+<button class="menu-toggle" aria-label="Open navigation" onclick="toggleMenu()">☰</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About Us</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#why-us">Why Us</a></li>
+<li><a href="#contact">Contact Us</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="hero-inner">
+<p class="section-label">Dynamic Protection & Maintenance (Pty) Ltd</p>
+<h1>Protecting Your Assets. Minimising Downtime.</h1>
+<p>Reliable, cost-effective and proactive property maintenance solutions designed to protect your assets, improve performance and keep your operations running smoothly.</p>
+<div class="buttons">
+<a class="btn btn-primary" href="#services">View Our Services</a>
+<a class="btn btn-outline" href="#contact">Request a Quote</a>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container about-grid">
+<div class="about-copy">
+<p class="section-label">About Us</p>
+<h2 class="section-title">More than a service provider — a trusted long-term partner.</h2>
+<p>Dynamic Protection & Maintenance (Pty) Ltd is a professional, client-focused property maintenance service provider founded by women with a vision to deliver reliable, practical and high-quality protection and maintenance solutions.</p>
+<p>We focus on quality workmanship, preventative care, project management and client satisfaction. Based in Durban, KwaZulu-Natal, we support clients with dependable services tailored to their property, operational needs and budget.</p>
+</div>
+<div class="about-points">
+<div class="point"><strong>01 — Women Founded</strong><span>Built from a women-led vision for dependable service and professional delivery.</span></div>
+<div class="point"><strong>02 — Proactive Approach</strong><span>We identify maintenance needs early to help reduce disruption and avoid unnecessary costs.</span></div>
+<div class="point"><strong>03 — End-to-End Service</strong><span>From consultation and assessment to deployment and ongoing support.</span></div>
+</div>
+</div>
+</section>
+
+<section class="services" id="services">
+<div class="container">
+<p class="section-label">What We Do</p>
+<h2 class="section-title">Our Services</h2>
+<p class="section-intro">Practical maintenance and protection solutions delivered with clear communication, professional standards and a focus on your priorities.</p>
+<div class="cards">
+<div class="card"><div class="icon">🛠️</div><h3>Preventative Maintenance</h3><p>Planned maintenance and inspections designed to identify issues early, protect your property and support long-term performance.</p></div>
+<div class="card"><div class="icon">⚙️</div><h3>Responsive Repairs</h3><p>Prompt, practical repair support for maintenance issues that require attention to minimise disruption and restore functionality.</p></div>
+<div class="card"><div class="icon">📋</div><h3>Project Management</h3><p>Structured coordination from scope definition and site assessment through to implementation, scheduling and completion.</p></div>
+</div>
+</div>
+</section>
+
+<section id="why-us">
+<div class="container">
+<p class="section-label">Why Choose Us</p>
+<h2 class="section-title">Built around reliability and client satisfaction.</h2>
+<div class="why-grid">
+<div class="why"><h3>Integrity & Reliability</h3><p>We aim to deliver on our commitments with dependable service and transparent communication.</p></div>
+<div class="why"><h3>Quality Workmanship</h3><p>We focus on practical solutions and professional standards across every service.</p></div>
+<div class="why"><h3>Clear Communication</h3><p>Clients receive clear information about scope, schedules, requirements and quotations.</p></div>
+<div class="why"><h3>Customer Satisfaction</h3><p>Our approach is centred on understanding the client's needs and delivering a suitable solution.</p></div>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<div class="cta-inner">
+<div><p class="section-label">Let's Work Together</p><h2>Get a tailored maintenance solution.</h2></div>
+<a class="btn btn-primary" href="#contact">Contact Us</a>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="container">
+<p class="section-label">Get In Touch</p>
+<h2 class="section-title">Let's discuss your requirements.</h2>
+<p class="section-intro">Tell us what you need and our team will get back to you.</p>
+<div class="contact-grid">
+<div class="contact-info">
+<div class="contact-item"><strong>Telephone</strong><a href="tel:+27680919750">+27 68 091 9750</a><br><a href="tel:+27629706019">+27 62 970 6019</a></div>
+<div class="contact-item"><strong>Email</strong><a href="mailto:admin.dynamicmaintenance@gmail.com">admin.dynamicmaintenance@gmail.com</a></div>
+<div class="contact-item"><strong>WhatsApp</strong><a href="https://wa.me/27629706019" target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp</a></div>
+<div class="contact-item"><strong>Facebook</strong><a href="https://www.facebook.com/share/1U5TnK7W18/" target="_blank" rel="noopener noreferrer">@Dynamics Pm</a></div>
+<div class="contact-item"><strong>Instagram</strong><a href="https://www.instagram.com/dynamicprotection.main/" target="_blank" rel="noopener noreferrer">@dynamicprotection.main</a></div>
+<div class="contact-item"><strong>Location</strong><span>Durban, KwaZulu-Natal, South Africa</span></div>
+</div>
+
+<form action="https://formsubmit.co/admin.dynamicmaintenance@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="New Website Enquiry - Dynamic Protection & Maintenance">
+<input type="hidden" name="_captcha" value="true">
+<input type="hidden" name="_template" value="table">
+<div class="form-grid">
+<div class="field"><label for="name">Full Name</label><input id="name" name="name" type="text" required></div>
+<div class="field"><label for="email">Email Address</label><input id="email" name="email" type="email" required></div>
+<div class="field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel"></div>
+<div class="field"><label for="service">Service Required</label><select id="service" name="service"><option value="">Select a service</option><option>Preventative Maintenance</option><option>Responsive Repairs</option><option>Project Management</option><option>General Enquiry</option></select></div>
+<div class="field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us about your requirements..." required></textarea></div>
+<div class="field full"><button class="btn btn-primary" type="submit">Send Enquiry</button></div>
+</div>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="footer-grid">
+<div><h3>Dynamic Protection & Maintenance</h3><p>Professional protection, maintenance and project management solutions in Durban, KwaZulu-Natal.</p></div>
+<div><h4>Explore</h4><ul><li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#services">Services</a></li><li><a href="#why-us">Why Us</a></li><li><a href="#contact">Contact Us</a></li></ul></div>
+<div><h4>Contact</h4><ul><li><a href="tel:+27680919750">+27 68 091 9750</a></li><li><a href="tel:+27629706019">+27 62 970 6019</a></li><li><a href="mailto:admin.dynamicmaintenance@gmail.com">admin.dynamicmaintenance@gmail.com</a></li><li><a href="https://www.facebook.com/share/1U5TnK7W18/" target="_blank" rel="noopener noreferrer">@Dynamics Pm</a></li><li><a href="https://www.instagram.com/dynamicprotection.main/" target="_blank" rel="noopener noreferrer">@dynamicprotection.main</a></li></ul></div>
+</div>
+<div class="copyright">© 2026 Dynamic Protection & Maintenance (Pty) Ltd. All rights reserved.</div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('navLinks').classList.toggle('open')}
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+</script>
+</body>
+</html>
