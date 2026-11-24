@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore completed projects by Dynamic Protection & Maintenance (Pty) Ltd.">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" href="/favicon.ico">
+<title>Gallery | Dynamic Protection & Maintenance</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,Helvetica,sans-serif;
+color:#17202a;
+background:#fff;
+line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(255,255,255,.97);
+border-bottom:1px solid #e9ecef;
+}
+.navbar{
+max-width:1180px;
+margin:auto;
+min-height:78px;
+padding:0 24px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+.logo a{
+font-weight:800;
+font-size:1.05rem;
+display:flex;
+align-items:center;
+gap:8px;
+}
+.logo-mark{
+width:38px;
+height:38px;
+border-radius:8px;
+background:#17202a;
+color:#fff;
+display:grid;
+place-items:center;
+font-weight:900;
+flex-shrink:0;
+}
+.nav-links{
+display:flex;
+gap:28px;
+align-items:center;
+list-style:none;
+}
+.nav-links a{
+font-weight:600;
+font-size:.92rem;
+}
+.nav-links a:hover,.nav-links a.active{
+color:#b07b2c;
+}
+.menu-toggle{
+display:none;
+border:0;
+background:none;
+font-size:1.7rem;
+cursor:pointer;
+}
+.gallery-hero{
+background:#17202a;
+color:#fff;
+padding:85px 24px;
+text-align:center;
+}
+.section-label{
+text-transform:uppercase;
+letter-spacing:2px;
+font-size:.78rem;
+font-weight:800;
+color:#b07b2c;
+margin-bottom:10px;
+}
+.gallery-hero h1{
+font-size:clamp(2.3rem,5vw,3.8rem);
+margin-bottom:15px;
+}
+.gallery-hero p{
+max-width:720px;
+margin:auto;
+color:#d8dfe4;
+}
+.gallery-section{
+max-width:1180px;
+margin:auto;
+padding:65px 24px 90px;
+min-height:450px;
+}
+.gallery-tabs{
+display:flex;
+justify-content:center;
+margin-bottom:40px;
+}
+.gallery-tab{
+background:#b07b2c;
+color:#fff;
+padding:12px 30px;
+border-radius:5px;
+font-weight:700;
+}
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:24px;
+}
+.project-card{
+border:1px solid #e5e7e9;
+border-radius:10px;
+overflow:hidden;
+background:#fff;
+box-shadow:0 8px 25px rgba(0,0,0,.05);
+}
+.project-card img{
+width:100%;
+height:260px;
+object-fit:cover;
+display:block;
+cursor:zoom-in;
+transition:transform .25s;
+}
+.project-card img:hover{
+transform:scale(1.02);
+}
+.project-details{
+padding:20px;
+}
+.project-details h3{
+margin-bottom:8px;
+}
+.project-details p{
+color:#68727a;
+font-size:.95rem;
+white-space:pre-wrap;
+}
+.gallery-message{
+grid-column:1/-1;
+text-align:center;
+color:#68727a;
+padding:50px 15px;
+}
+dialog{
+position:fixed;
+inset:0;
+margin:auto;
+border:0;
+background:transparent;
+max-width:95vw;
+max-height:95vh;
+overflow:visible;
+}
+dialog::backdrop{
+background:rgba(0,0,0,.92);
+}
+dialog img{
+display:block;
+max-width:90vw;
+max-height:85vh;
+object-fit:contain;
+border-radius:5px;
+}
+.close-image{
+position:absolute;
+top:5px;
+right:5px;
+background:#17202a;
+color:#fff;
+border:1px solid #fff;
+border-radius:50%;
+width:40px;
+height:40px;
+font-size:24px;
+cursor:pointer;
+}
+footer{
+background:#0f151a;
+color:#aeb7bd;
+padding:35px 24px;
+text-align:center;
+font-size:.9rem;
+}
+footer h3{
+color:#fff;
+margin-bottom:10px;
+}
+footer p{margin-bottom:10px}
+footer a:hover{color:#fff}
+@media(max-width:850px){
+.nav-links{
+display:none;
+position:absolute;
+top:78px;
+left:0;
+right:0;
+background:#fff;
+padding:20px 24px;
+flex-direction:column;
+align-items:flex-start;
+border-bottom:1px solid #ddd;
+}
+.nav-links.open{display:flex}
+.menu-toggle{display:block}
+.gallery-grid{
+grid-template-columns:repeat(2,minmax(0,1fr));
+}
+}
+@media(max-width:550px){
+.gallery-grid{grid-template-columns:1fr}
+.navbar{padding:0 18px}
+.logo a{font-size:.9rem}
+.gallery-hero{padding:60px 18px}
+.gallery-section{padding:40px 18px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+<div class="logo">
+<a href="/#home">
+<span class="logo-mark">D</span>
+Dynamic Protection & Maintenance
+</a>
+</div>
+
+<button class="menu-toggle"
+aria-label="Open navigation"
+onclick="toggleMenu()">☰</button>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="/#home">Home</a></li>
+<li><a href="/#about">About Us</a></li>
+<li><a href="/#services">Services</a></li>
+<li><a href="/#why-us">Why Us</a></li>
+<li><a href="/gallery.html" class="active"
+aria-current="page">Gallery</a></li>
+<li><a href="/#contact">Contact Us</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+
+<section class="gallery-hero">
+<p class="section-label">Our Portfolio</p>
+<h1>Our Project Gallery</h1>
+<p>Explore our completed projects, showcasing our
+expertise, quality workmanship and commitment
+to excellence.</p>
+</section>
+
+<section class="gallery-section">
+
+<div class="gallery-tabs">
+<span class="gallery-tab">All Projects</span>
+</div>
+
+<div class="gallery-grid" id="galleryGrid">
+<p class="gallery-message">
+Project photographs will be available soon.
+</p>
+</div>
+
+</section>
+</main>
+
+<dialog id="imageViewer">
+<button class="close-image"
+aria-label="Close image"
+onclick="document.getElementById('imageViewer').close()">
+&times;
+</button>
+<img id="viewerImage" src="" alt="">
+</dialog>
+
+<footer>
+<h3>Dynamic Protection & Maintenance (Pty) Ltd</h3>
+<p>Protecting Your Assets. Minimising Downtime.</p>
+<p>
+<a href="mailto:info@dynamickzn.co.za">
+info@dynamickzn.co.za
+</a>
+</p>
+<p>© 2026 Dynamic Protection & Maintenance (Pty) Ltd.
+All rights reserved.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById('navLinks')
+.classList.toggle('open');
+}
+
+document.querySelectorAll('#navLinks a')
+.forEach(a=>a.addEventListener('click',()=>{
+document.getElementById('navLinks')
+.classList.remove('open');
+}));
+
+function openImage(url, title){
+const viewer=document.getElementById('imageViewer');
+const img=document.getElementById('viewerImage');
+img.src=url;
+img.alt=title;
+viewer.showModal();
+}
+
+document.getElementById('imageViewer')
+.addEventListener('click',function(event){
+if(event.target===this){
+this.close();
+}
+});
+</script>
+
+</body>
+</html>
